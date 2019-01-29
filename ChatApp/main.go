@@ -29,7 +29,7 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request){
 	t.once.Do(func() {
 		pwd, _ := os.Getwd()
 		fmt.Println("current file path", pwd) // printed current working directory
-		t.templ = template.Must(template.ParseFiles(filepath.Join("ChatApp/templates", t.filename)))
+		t.templ = template.Must(template.ParseFiles(filepath.Join("templates", t.filename)))
 	})
 	t.templ.Execute(w, nil)
 }
